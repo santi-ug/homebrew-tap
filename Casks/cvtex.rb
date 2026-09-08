@@ -21,12 +21,6 @@ cask "cvtex" do
   ]
 
   caveats <<~EOS
-    CvTeX is ad-hoc signed, not notarized. The first launch of every build
-    gets a "cannot verify" dialog; allow it once under System Settings >
-    Privacy & Security > Open Anyway, or clear the flag yourself:
-
-      xattr -dr com.apple.quarantine /Applications/cvtex.app
-
     Compiling needs nothing else: Tectonic ships inside the app. Rewriting
     needs a Claude account, either Claude Code (brew install --cask
     claude-code) or an API key.
