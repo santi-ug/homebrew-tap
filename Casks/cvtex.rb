@@ -2,10 +2,10 @@ cask "cvtex" do
   version "0.1.0"
   sha256 "4d60168360c118d1c468ac9caaf1a7bd4e6f82f08a3c93323c15f3ffa18c44ed"
 
-  url "https://github.com/santi-ug/CvTeX/releases/download/v#{version}/CvTeX-#{version}.zip"
+  url "https://github.com/santi-ug/cvtex-releases/releases/download/v#{version}/CvTeX-#{version}.zip"
   name "CvTeX"
   desc "Tailors a LaTeX resume to a job posting and keeps it to one page"
-  homepage "https://github.com/santi-ug/CvTeX"
+  homepage "https://github.com/santi-ug/cvtex-releases"
 
   # Matches LSMinimumSystemVersion. macOS 15 is Sequoia; the symbol form means "at least".
   depends_on macos: :sequoia
