@@ -1,6 +1,6 @@
 cask "cvtex" do
-  version "0.1.0"
-  sha256 "4d60168360c118d1c468ac9caaf1a7bd4e6f82f08a3c93323c15f3ffa18c44ed"
+  version "0.0.1"
+  sha256 "7216119769233caf2452a5e9ae81b0f1cc09f2e614c933e79dc0acc7ff62f246"
 
   url "https://github.com/santi-ug/cvtex-releases/releases/download/v#{version}/CvTeX-#{version}.zip"
   name "CvTeX"
