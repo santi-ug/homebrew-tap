@@ -1,6 +1,6 @@
 cask "void" do
-  version "1.2.0"
-  sha256 "f68806c7d92d55cf5ab73b9ad88b758017bc2310a619adfb4e6f77124d2482f3"
+  version "1.2.1"
+  sha256 "d4c7cbcba4db16af582e013bc8850a72dae8ad35ec5f7d062ef2edd7d6ebc369"
 
   url "https://github.com/santi-ug/void/releases/download/v#{version}/void-#{version}.dmg"
   name "void"
@@ -28,9 +28,10 @@ cask "void" do
 
       System Settings → Privacy & Security → Accessibility → add void
 
-    void is ad-hoc signed rather than notarized, so macOS binds that grant to
-    this exact build. After every `brew upgrade --cask void` you must remove
-    void from the Accessibility list and add it back, or it will silently stop
-    blocking input while the toggle still reads as enabled.
+    Releases starting with 1.2.1 are Developer ID signed and notarized.
+    Keep quarantine enabled; no Open Anyway exception is needed.
+
+    When upgrading from an older ad-hoc build, you may need to remove void
+    from Accessibility and add it back once.
   EOS
 end
