@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 cask "void" do
-  version "1.2.1"
-  sha256 "d4c7cbcba4db16af582e013bc8850a72dae8ad35ec5f7d062ef2edd7d6ebc369"
+  version "1.3.0"
+  sha256 "5c878a83af567d6dfe049b3f0c8e5075d6664502aec00f3ce776c4772a546d7a"
 
   url "https://github.com/santi-ug/void/releases/download/v#{version}/void-#{version}.dmg"
   name "void"
@@ -11,6 +13,15 @@ cask "void" do
   depends_on macos: :tahoe
 
   app "void.app"
+
+  preflight_steps do
+    run "/bin/sh", args: ["-c", <<~SH]
+      /usr/bin/sw_vers -productVersion | /usr/bin/awk -F. '
+        $1 > 26 || ($1 == 26 && $2 >= 2) { supported = 1 }
+        END { if (!supported) { print "void requires macOS 26.2 or later." > "/dev/stderr"; exit 1 } }
+      '
+    SH
+  end
 
   # void holds a system-wide event tap while enabled. Quitting it before the
   # bundle is replaced keeps an upgrade from leaving a stale tap behind.
