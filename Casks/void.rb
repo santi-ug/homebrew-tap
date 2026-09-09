@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 cask "void" do
-  version "1.3.0"
-  sha256 "5c878a83af567d6dfe049b3f0c8e5075d6664502aec00f3ce776c4772a546d7a"
+  version "1.4.0"
+  sha256 "d2198e15a736dcd3b39325b90d9aa479d067da5bf74e2ea41f20376c2b86f041"
 
   url "https://github.com/santi-ug/void/releases/download/v#{version}/void-#{version}.dmg"
   name "void"
