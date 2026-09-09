@@ -9,7 +9,16 @@ cask "void" do
   desc "Blanks the display and locks the keyboard for screen cleaning"
   homepage "https://github.com/santi-ug/void"
 
-  # Matches the project's deployment target. macOS 26 is Tahoe.
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
+  # void updates itself from GitHub releases; `brew upgrade` skips it unless --greedy.
+  auto_updates true
+  # Matches the project's deployment target. macOS 26 is Tahoe; the app's
+  # LSMinimumSystemVersion (26.2) is enforced at launch, so this check only
+  # turns a silent refusal to open into a clear install-time error.
   depends_on macos: :tahoe
 
   app "void.app"
