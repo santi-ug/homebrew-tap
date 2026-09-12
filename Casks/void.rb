@@ -4,10 +4,10 @@ cask "void" do
   version "1.4.0"
   sha256 "d2198e15a736dcd3b39325b90d9aa479d067da5bf74e2ea41f20376c2b86f041"
 
-  url "https://github.com/santi-ug/void/releases/download/v#{version}/void-#{version}.dmg"
+  url "https://github.com/santi-ug/void-releases/releases/download/v#{version}/void-#{version}.dmg"
   name "void"
   desc "Blanks the display and locks the keyboard for screen cleaning"
-  homepage "https://github.com/santi-ug/void"
+  homepage "https://void.santiu.workers.dev"
 
   livecheck do
     url :url
